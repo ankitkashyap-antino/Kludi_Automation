@@ -6,6 +6,8 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Properties;
+
 public class BaseResource {
     public WebDriver driver;
     public static String path = "C:\\Users\\Ankit\\IdeaProjects\\Kludi_Automation\\Reports\\report.html";
@@ -13,7 +15,14 @@ public class BaseResource {
     public static ExtentSparkReporter htmlReporter;
 
 
-    public static void initialzReporter(String browser){
+    public static void setupBrowser(){
+        Properties prop = new Properties();
+
+    }
+
+
+
+    public static void initialzReporter(){
 
         //SetUp Reporter
         htmlReporter = new ExtentSparkReporter(path);
@@ -30,13 +39,9 @@ public class BaseResource {
         htmlReporter.config().setReportName("Ankit");
         htmlReporter.config().setTheme(Theme.DARK);
         htmlReporter.config().setTimeStampFormat("MM/dd/yyyy hh:mm:ss a");
-        htmlReporter.config().
-
-
-
-
 
     }
+
 
 
 }
